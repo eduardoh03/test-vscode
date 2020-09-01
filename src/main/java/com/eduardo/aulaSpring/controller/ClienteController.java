@@ -1,4 +1,4 @@
-package com.eduardo.testvscode.controller;
+package com.eduardo.aulaSpring.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
