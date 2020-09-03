@@ -1,32 +1,43 @@
 package model;
 
-public class Cliente {
-    private String cpf;
-    private String nome;
+public class Cliente extends Experience{
+    private String sobre;
+    private String cargoAtual;
     private String email;
-    private String telefone;
+    private String endereco;
+    private String complemento;
+    private String bairro;
+    private String cidade;    
+    private boolean visibilidadePerfil;
 
-    public Cliente(String cpf, String nome, String email, String telefone) {
-        this.cpf = cpf;
-        this.nome = nome;
+
+    public Cliente(Long id, String nome, String uF, String cargo, String nomeEmpresa, boolean ocupacaoAtual,
+            String descricao, String sobre, String cargoAtual, String email, String endereco, String complemento,
+            String bairro, String cidade, boolean visibilidadePerfil) {
+        super(id, nome, uF, cargo, nomeEmpresa, ocupacaoAtual, descricao);
+        this.sobre = sobre;
+        this.cargoAtual = cargoAtual;
         this.email = email;
-        this.telefone = telefone;
+        this.endereco = endereco;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.visibilidadePerfil = visibilidadePerfil;
+    }
+    public String getSobre() {
+        return sobre;
     }
 
-    public String getCpf() {
-        return cpf;
+    public void setSobre(String sobre) {
+        this.sobre = sobre;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public String getCargoAtual() {
+        return cargoAtual;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCargoAtual(String cargoAtual) {
+        this.cargoAtual = cargoAtual;
     }
 
     public String getEmail() {
@@ -37,37 +48,48 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-        return result;
+    public String getComplemento() {
+        return complemento;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Cliente other = (Cliente) obj;
-        if (cpf == null) {
-            if (other.cpf != null)
-                return false;
-        } else if (!cpf.equals(other.cpf))
-            return false;
-        return true;
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public boolean isVisibilidadePerfil() {
+        return visibilidadePerfil;
+    }
+
+    public void setVisibilidadePerfil(boolean visibilidadePerfil) {
+        this.visibilidadePerfil = visibilidadePerfil;
+    }
+
+    
+
+
 
 }
